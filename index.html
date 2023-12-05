@@ -7,6 +7,35 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
+            let button = document.getElementsByTagName("button");
+            // function turnRed() 
+            // {
+            //     document.getElementsByClassName('wrong')[0].style.backgroundColor = 'red';
+            // }
+            function turnGreen()
+            {
+                document.getElementById('right').style.backgroundColor = 'green';
+            }
+
+            function turnRed1() 
+            {
+                document.getElementById('wrong1').style.backgroundColor = 'red';
+            }
+            function turnRed2() 
+            {
+                document.getElementById('wrong2').style.backgroundColor = 'red';
+            }
+            function turnRed3() 
+            {
+                document.getElementById('wrong3').style.backgroundColor = 'red';
+            }
+            function turnRed4() 
+            {
+                document.getElementById('wrong4').style.backgroundColor = 'red';
+            }
+            // function changeColor(color) {
+            //     document.getElementsByClassName('wrong').style.backgroundColor = color;
+            // }
         </script>
     </head>
     <body>
@@ -20,13 +49,13 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <div>
-                    <h2>What toy company launched the Barbie doll in 1959?</h2>
+                    <h3>What toy company launched the Barbie doll in 1959?</h3>
                     <div class="button-container">
-                        <div class="button">Johnson & Johnson</div>
-                        <div class="button">Railway Pacific</div>
-                        <div class="button">General Motors</div>
-                        <div class="button">Mattel Inc.</div>
-                        <div class="button">Tesla</div>
+                        <button id="wrong1" type="submit" onclick="turnRed1();">Johnson & Johnson</button>
+                        <button id="wrong2" type="submit" onclick="turnRed2();">Railway Pacific</button>
+                        <button id="wrong3" type="submit" onclick="turnRed3();">General Motors</button>
+                        <button id="right" type="submit" onclick="turnGreen();">Mattel Inc.</button>
+                        <button id="wrong4" type="submit" onclick="turnRed4();">Tesla</button>
                     </div>
                 </div>
             </div>
@@ -36,10 +65,10 @@
                 <hr>
                 <!-- TODO: Add free response question here -->
                 <div>
-                    <h2>Which chemical element has the atomic number of 1?</h2>
+                    <h3>Which chemical element has the atomic number of 1?</h3>
                     <form action="">
                         <input type="text" id="answer" name="answer">
-                        <label for="answer">Check Answer</label>
+                        <button type="submit" for="answer">Check Answer</button>
                     </form>
                 </div>
             </div>
