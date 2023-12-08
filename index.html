@@ -15,23 +15,28 @@
             function turnGreen()
             {
                 document.getElementById('right').style.backgroundColor = 'green';
+                document.getElementById('correct').style.display = 'block';
             }
 
             function turnRed1() 
             {
                 document.getElementById('wrong1').style.backgroundColor = 'red';
+                document.getElementById('incorrect').style.display = 'block';
             }
             function turnRed2() 
             {
                 document.getElementById('wrong2').style.backgroundColor = 'red';
+                document.getElementById('incorrect').style.display = 'block';
             }
             function turnRed3() 
             {
                 document.getElementById('wrong3').style.backgroundColor = 'red';
+                document.getElementById('incorrect').style.display = 'block';
             }
             function turnRed4() 
             {
                 document.getElementById('wrong4').style.backgroundColor = 'red';
+                document.getElementById('incorrect').style.display = 'block';
             }
             // function changeColor(color) {
             //     document.getElementsByClassName('wrong').style.backgroundColor = color;
@@ -51,6 +56,8 @@
                 <div>
                     <h3>What toy company launched the Barbie doll in 1959?</h3>
                     <div class="button-container">
+                        <p class="hide" id="incorrect">Incorrect</p>
+                        <p class="hide" id="correct">Correct!</p>
                         <button id="wrong1" type="submit" onclick="turnRed1();">Johnson & Johnson</button>
                         <button id="wrong2" type="submit" onclick="turnRed2();">Railway Pacific</button>
                         <button id="wrong3" type="submit" onclick="turnRed3();">General Motors</button>

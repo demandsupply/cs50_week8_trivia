@@ -37,6 +37,11 @@ h1 {
     font-size: 48px;
 }
 
+.hide {
+    display: none;
+    transition: 1s;
+}
+
 button, input[type="submit"] {
     background-color: #d9edff;
     border: 1px solid transparent;
