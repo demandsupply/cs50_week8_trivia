@@ -5,6 +5,45 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
+        
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <div>
+                    <h3>What toy company launched the Barbie doll in 1959?</h3>
+                    <div class="button-container">
+                        <p class="hide" id="incorrect">Incorrect</p>
+                        <p class="hide" id="correct">Correct!</p>
+                        <button id="wrong1" type="submit" onclick="turnRed1();">Johnson & Johnson</button>
+                        <button id="wrong2" type="submit" onclick="turnRed2();">Railway Pacific</button>
+                        <button id="wrong3" type="submit" onclick="turnRed3();">General Motors</button>
+                        <button id="right" type="submit" onclick="turnGreen();">Mattel Inc.</button>
+                        <button id="wrong4" type="submit" onclick="turnRed4();">Tesla</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <div>
+                    <h3>Which chemical element has the atomic number of 1?</h3>
+                    <form action="#" id="answerForm">
+                        <input type="text" id="answer" name="answer">
+                        <button type="submit" for="answer">Check Answer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <script>
             // TODO: Add code to check answers to questions
             let button = document.getElementsByTagName("button");
@@ -41,44 +80,23 @@
             // function changeColor(color) {
             //     document.getElementsByClassName('wrong').style.backgroundColor = color;
             // }
+            let rightAnswer = "hydrogen";
+            let answer = document.getElementById('answer');
+            let form = document.getElementById('answerForm');
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                if (answer.value === "") {
+                    alert("type the answer");
+                } 
+                else if (answer.value === rightAnswer) {
+                    alert("right");
+                }
+                else {
+                    alert("wrong");
+                }
+            });
         </script>
-    </head>
-    <body>
-        <div class="header">
-            <h1>Trivia!</h1>
-        </div>
-
-        <div class="container">
-            <div class="section">
-                <h2>Part 1: Multiple Choice </h2>
-                <hr>
-                <!-- TODO: Add multiple choice question here -->
-                <div>
-                    <h3>What toy company launched the Barbie doll in 1959?</h3>
-                    <div class="button-container">
-                        <p class="hide" id="incorrect">Incorrect</p>
-                        <p class="hide" id="correct">Correct!</p>
-                        <button id="wrong1" type="submit" onclick="turnRed1();">Johnson & Johnson</button>
-                        <button id="wrong2" type="submit" onclick="turnRed2();">Railway Pacific</button>
-                        <button id="wrong3" type="submit" onclick="turnRed3();">General Motors</button>
-                        <button id="right" type="submit" onclick="turnGreen();">Mattel Inc.</button>
-                        <button id="wrong4" type="submit" onclick="turnRed4();">Tesla</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Part 2: Free Response</h2>
-                <hr>
-                <!-- TODO: Add free response question here -->
-                <div>
-                    <h3>Which chemical element has the atomic number of 1?</h3>
-                    <form action="">
-                        <input type="text" id="answer" name="answer">
-                        <button type="submit" for="answer">Check Answer</button>
-                    </form>
-                </div>
-            </div>
-        </div>
     </body>
 </html>
