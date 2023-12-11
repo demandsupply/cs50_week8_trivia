@@ -37,6 +37,8 @@
                 <!-- TODO: Add free response question here -->
                 <div>
                     <h3>Which chemical element has the atomic number of 1?</h3>
+                    <p class="hide" id="incorrect2">Incorrect</p>
+                    <p class="hide" id="correct2">Correct!</p>
                     <form action="#" id="answerForm">
                         <input type="text" id="answer" name="answer">
                         <button type="submit" for="answer">Check Answer</button>
@@ -54,27 +56,32 @@
             function turnGreen()
             {
                 document.getElementById('right').style.backgroundColor = 'green';
+                document.getElementById('incorrect').style.display = 'none';
                 document.getElementById('correct').style.display = 'block';
             }
 
             function turnRed1() 
             {
                 document.getElementById('wrong1').style.backgroundColor = 'red';
+                document.getElementById('correct').style.display = 'none';
                 document.getElementById('incorrect').style.display = 'block';
             }
             function turnRed2() 
             {
                 document.getElementById('wrong2').style.backgroundColor = 'red';
+                document.getElementById('correct').style.display = 'none';
                 document.getElementById('incorrect').style.display = 'block';
             }
             function turnRed3() 
             {
                 document.getElementById('wrong3').style.backgroundColor = 'red';
+                document.getElementById('correct').style.display = 'none';
                 document.getElementById('incorrect').style.display = 'block';
             }
             function turnRed4() 
             {
                 document.getElementById('wrong4').style.backgroundColor = 'red';
+                document.getElementById('correct').style.display = 'none';
                 document.getElementById('incorrect').style.display = 'block';
             }
             // function changeColor(color) {
@@ -91,10 +98,18 @@
                     alert("type the answer");
                 } 
                 else if (answer.value === rightAnswer) {
-                    alert("right");
+                    // alert("right");
+                    answer.classList.remove('red');
+                    answer.classList.add('green');
+                    document.getElementById('correct2').classList.remove('hide');
+                    document.getElementById('incorrect2').classList.add('hide');
                 }
                 else {
-                    alert("wrong");
+                    // alert("wrong");
+                    answer.classList.remove('green');
+                    document.getElementById('answer').classList.add('red');
+                    document.getElementById('incorrect2').classList.remove('hide');
+                    document.getElementById('correct2').classList.add('hide');
                 }
             });
         </script>
